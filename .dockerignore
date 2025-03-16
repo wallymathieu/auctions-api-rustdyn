@@ -1,0 +1,8 @@
+target/
+.git/
+.gitignore
+.env
+.env.*
+**/*.rs.bk
+Dockerfile
+docker-compose.yml
