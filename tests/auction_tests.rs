@@ -114,21 +114,6 @@ pub fn bid2() -> BidData {
     }
 }
 
-pub fn with_bid(auction: &mut Auction, bid: Bid) {
-    match auction {
-        Auction::TimedAscending {
-            base,
-            ends_at: _,
-            options: _,
-        } => {
-            base.bids.push(bid);
-        }
-        Auction::SingleSealedBid { base, options: _ } => {
-            base.bids.push(bid);
-        }
-    }
-}
-
 fn create_sample_bid(user_id: &str, amount: i64, hours_after_start: i64) -> BidData {
     BidData {
         user: UserId::new(user_id),
